@@ -12,8 +12,8 @@ jobs:
     with:
       number-of-agents: 3
       parallel-commands: |
-        pnpx nx-cloud record -- pnpx nx workspace-lint
-        pnpx nx-cloud record -- pnpx nx format:check --libs-and-apps
+        NX_VERBOSE_LOGGING=true pnpx nx-cloud record -- pnpx nx workspace-lint
+        NX_VERBOSE_LOGGING=true pnpx nx-cloud record -- pnpx nx format:check --libs-and-apps
       parallel-commands-on-agents: |
         pnpx nx affected --target=lint --parallel=3
         pnpx nx affected --target=test --parallel=3 --ci --code-coverage
