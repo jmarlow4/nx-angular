@@ -5,7 +5,7 @@ import { LogService } from './log.service';
 
 const reset = () => {
   for (const key in LogService.DEBUG) {
-    LogService.DEBUG[key] = false;
+    (LogService.DEBUG as any)[key] = false;
   }
 };
 describe('core: LogService', () => {
