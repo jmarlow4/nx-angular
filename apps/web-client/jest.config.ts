@@ -2,6 +2,7 @@
 export default {
   displayName: 'web-client',
   preset: '../../jest.preset.js',
+  testRunner: 'jest-jasmine2',
   setupFilesAfterEnv: ['<rootDir>/src/test-setup.ts'],
   globals: {
     'ts-jest': {

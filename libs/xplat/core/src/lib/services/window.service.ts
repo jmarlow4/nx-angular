@@ -1,5 +1,5 @@
 // angular
-import { Injectable, Inject, ViewContainerRef } from '@angular/core';
+import { Injectable, Inject } from '@angular/core';
 
 // app
 import { isObject, isNativeScript } from '@nx-angular/xplat/utils';
@@ -44,7 +44,7 @@ export class WindowService {
 
   public confirm(
     msg: any,
-    action?: Function /* used for fancyalerts on mobile*/
+    action?: () => any /* used for fancyalerts on mobile*/
   ): Promise<boolean> {
     return new Promise((resolve, reject) => {
       const result: any = (<any>this._platformWindow).confirm(

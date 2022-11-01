@@ -2,7 +2,7 @@
  * Platform check helpers
  */
 
-declare var NSObject: any, NSString: any, android: any, java: any, window: any;
+declare let NSObject: any, NSString: any, android: any, java: any, window: any;
 
 /**
  * Electron helpers

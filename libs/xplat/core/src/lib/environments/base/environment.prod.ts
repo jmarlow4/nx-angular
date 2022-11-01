@@ -1,4 +1,4 @@
-import { IEnvironment } from '@nx-angular/xplat/core';
+import { IEnvironment } from '../';
 import { deepMerge } from '@nx-angular/xplat/utils';
 import { environmentBase } from './environment.base';
 
