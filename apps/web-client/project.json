@@ -20,7 +20,8 @@
           "apps/web-client/src/assets"
         ],
         "styles": ["apps/web-client/src/styles.scss"],
-        "scripts": []
+        "scripts": [],
+        "allowedCommonJsDependencies": ["websocket", "cross-fetch", "deepmerge"]
       },
       "configurations": {
         "production": {

@@ -14,52 +14,51 @@
 @import 'typography';
 
 /* -=-=-=-=- PRIMARY COLOR -=-=-=-=- */
-$theme-primary: map.get($theme-indigo, 500);
-$theme-primary-lighter: map.get($theme-indigo, 300);
-$theme-primary-darker: map.get($theme-indigo, 700);
-$theme-primary-200: map.get($theme-indigo, 200);
+$theme-primary-color: map.get($theme-indigo, 500);
+$theme-primary-lighter-color: map.get($theme-indigo, 300);
+$theme-primary-darker-color: map.get($theme-indigo, 700);
+$theme-primary-200-color: map.get($theme-indigo, 200);
 
 /* -=-=-=-=- ACCENT COLOR -=-=-=-=- */
-$theme-accent: map.get($theme-green, 500);
-$theme-accent-lighter: map.get($theme-green, 300);
-$theme-accent-darker: map.get($theme-green, 700);
-$theme-accent-200: map.get($theme-green, 200);
+$theme-accent-color: map.get($theme-green, 500);
+$theme-accent-lighter-color: map.get($theme-green, 300);
+$theme-accent-darker-color: map.get($theme-green, 700);
+$theme-accent-200-color: map.get($theme-green, 200);
 
 /* -=-=-=-=- WARNING COLOR -=-=-=-=- */
-$theme-warn: map.get($theme-red, 500);
-$theme-warn-lighter: map.get($theme-red, 300);
-$theme-warn-darker: map.get($theme-red, 700);
-$theme-warn-200: map.get($theme-red, 200);
+$theme-warn-color: map.get($theme-red, 500);
+$theme-warn-lighter-color: map.get($theme-red, 300);
+$theme-warn-darker-color: map.get($theme-red, 700);
+$theme-warn-200-color: map.get($theme-red, 200);
 
 body {
-  --primary-color: $theme-primary;
-  --primary-lighter-color: $theme-primary-lighter;
-  --primary-darker-color: $theme-primary-darker;
+  --primary-color: $theme-primary-color;
+  --primary-lighter-color: $theme-primary-lighter-color;
+  --primary-darker-color: $theme-primary-darker-color;
   --text-primary-color: #{$dark-primary-text};
   --text-primary-lighter-color: #{$dark-primary-text};
   --text-primary-darker-color: #{$light-primary-text};
-  --accent-color: $theme-accent;
 
-  --accent-color: $theme-accent;
-  --accent-lighter-color: $theme-accent-lighter;
-  --accent-darker-color: $theme-accent-darker;
+  --accent-color: $theme-accent-color;
+  --accent-lighter-color: $theme-accent-lighter-color;
+  --accent-darker-color: $theme-accent-darker-color;
   --text-accent-color: #{$dark-primary-text};
   --text-accent-lighter-color: #{$dark-primary-text};
   --text-accent-darker-color: #{$dark-primary-text};
 
-  --warn-color: $theme-warn;
-  --warn-lighter-color: $theme-warn-lighter;
-  --warn-darker-color: $theme-warn-darker;
+  --warn-color: $theme-warn-color;
+  --warn-lighter-color: $theme-warn-lighter-color;
+  --warn-darker-color: $theme-warn-darker-color;
   --text-warn-color: #{$light-primary-text};
   --text-warn-lighter-color: #{$dark-primary-text};
   --text-warn-darker-color: #{$light-primary-text};
 }
 
 $mat-primary: (
-  main: $theme-primary,
-  lighter: $theme-primary-lighter,
-  darker: $theme-primary-darker,
-  200: $theme-primary-200,
+  main: $theme-primary-color,
+  lighter: $theme-primary-lighter-color,
+  darker: $theme-primary-darker-color,
+  200: $theme-primary-200-color,
   contrast: (
     main: $light-primary-text,
     lighter: $dark-primary-text,
@@ -69,11 +68,10 @@ $mat-primary: (
 $theme-primary: mat.define-palette($mat-primary, main, lighter, darker);
 
 $mat-accent: (
-  main: $theme-accent,
-  lighter: $theme-accent-lighter,
-  darker: $theme-accent-darker,
-  200: $theme-accent-200,
-  // For slide toggle,
+  main: $theme-accent-color,
+  lighter: $theme-accent-lighter-color,
+  darker: $theme-accent-darker-color,
+  200: $theme-accent-200-color,
   contrast:
     (
       main: $dark-primary-text,
@@ -84,11 +82,10 @@ $mat-accent: (
 $theme-accent: mat.define-palette($mat-accent, main, lighter, darker);
 
 $mat-warn: (
-  main: $theme-warn,
-  lighter: $theme-warn-lighter,
-  darker: $theme-warn-darker,
-  200: $theme-warn-200,
-  // For slide toggle,
+  main: $theme-warn-color,
+  lighter: $theme-warn-lighter-color,
+  darker: $theme-warn-darker-color,
+  200: $theme-warn-200-color,
   contrast:
     (
       main: $light-primary-text,
