@@ -1,0 +1,34 @@
+@use '@angular/material' as mat;
+@import '@nx-angular/xplat-web-scss';
+
+::ng-deep .light .mat-toolbar.client-web-header {
+  background-color: $theme-lightest;
+  color: $dark-primary-text;
+}
+::ng-deep .dark a.active {
+  background-color: $dark-bg-lighter-10;
+}
+::ng-deep .light a.active {
+  background-color: $light-bg-darker-5;
+}
+
+.nav {
+  .mat-button.nav-button {
+    border-radius: 0;
+    line-height: 10px;
+    height: 64px;
+    width: 82px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    .nav-label {
+      @include mat.typography-level($fontConfig, 'icon-button-label');
+    }
+  }
+  &.is-mobile {
+    .mat-button.nav-button {
+      height: 56px;
+      width: 56px;
+    }
+  }
+}

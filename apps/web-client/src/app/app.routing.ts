@@ -8,13 +8,13 @@ import { SharedModule } from './features/shared/shared.module';
 const routes: Routes = [
   {
     path: '',
-    redirectTo: '/home',
-    pathMatch: 'full',
+    loadChildren: () =>
+      import('./shell/shell.module').then((m) => m.ShellModule),
   },
   {
-    path: 'home',
+    path: 'auth',
     loadChildren: () =>
-      import('./features/home/home.module').then((m) => m.HomeModule),
+      import('./features/auth/auth.module').then((m) => m.AuthModule),
   },
 ];
 

@@ -1,0 +1,35 @@
+<div class="p-8 flex justify-around">
+  <mat-card
+    class="w-full"
+    [style.minWidth]="'340px'"
+    [style.maxWidth]="'500px'"
+  >
+    <mat-card-header class="flex flex-row justify-center">
+      <mat-card-title>{{ 'NX <3 Angular' }}</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <nav
+        mat-tab-nav-bar
+        mat-stretch-tabs
+        color="accent"
+        [tabPanel]="tabPanel"
+      >
+        <a
+          mat-tab-link
+          *ngFor="let link of links"
+          routerLinkActive
+          #rla="routerLinkActive"
+          [active]="rla.isActive"
+          [routerLink]="link"
+        >
+          {{ link }}
+        </a>
+      </nav>
+      <mat-tab-nav-panel #tabPanel>
+        <div class="pt-5">
+          <router-outlet></router-outlet>
+        </div>
+      </mat-tab-nav-panel>
+    </mat-card-content>
+  </mat-card>
+</div>

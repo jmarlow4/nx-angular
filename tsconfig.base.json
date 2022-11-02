@@ -17,7 +17,7 @@
     "paths": {
       "@nx-angular/xplat/core": ["libs/xplat/core/src/index.ts"],
       "@nx-angular/xplat/environments": [
-        "libs/xplat/core/src/lib/environments/base/index.ts"
+        "libs/xplat/core/src/lib/environments/index.ts"
       ],
       "@nx-angular/xplat/features": ["libs/xplat/features/src/index.ts"],
       "@nx-angular/xplat/utils": ["libs/xplat/utils/src/index.ts"],
@@ -25,5 +25,11 @@
       "@nx-angular/xplat/web/features": ["libs/xplat/web/features/src/index.ts"]
     }
   },
-  "exclude": ["node_modules", "tmp"]
+  "exclude": ["node_modules", "tmp"],
+  "angularCompilerOptions": {
+    "enableI18nLegacyMessageIdFormat": false,
+    "strictInjectionParameters": true,
+    "strictInputAccessModifiers": true,
+    "strictTemplates": true
+  }
 }

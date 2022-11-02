@@ -3,4 +3,8 @@
  */
 export interface IEnvironment {
   production?: boolean;
+  supabase: {
+    url: string;
+    publicKey: string;
+  };
 }

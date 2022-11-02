@@ -1,0 +1,341 @@
+@use '@angular/material' as mat;
+@use 'sass:map';
+
+$theme-lightest: #fff;
+$theme-darkest: #0e0f15;
+
+$dark-text: $theme-darkest;
+$light-text: $theme-lightest;
+
+// Light Theme Text
+$dark-primary-text: rgba($dark-text, 0.87);
+$dark-accent-text: rgba($dark-primary-text, 0.54);
+$dark-disabled-text: rgba($dark-primary-text, 0.38);
+$dark-dividers: rgba($dark-primary-text, 0.12);
+$dark-focused: rgba($dark-primary-text, 0.12);
+
+// Dark Theme text
+$light-primary-text: $light-text;
+$light-accent-text: rgba($light-primary-text, 0.7);
+$light-disabled-text: rgba($light-primary-text, 0.5);
+$light-dividers: rgba($light-primary-text, 0.12);
+$light-focused: rgba($light-primary-text, 0.12);
+
+$theme-slate: (
+  50: $theme-lightest,
+  100: #f5f2f9,
+  200: #e3e4e8,
+  300: #ccced7,
+  400: #b1b5c3,
+  500: #9196ac,
+  600: #666d8a,
+  700: #515770,
+  800: #42465c,
+  850: #303345,
+  900: #1a1c28,
+  A100: $theme-lightest,
+  A200: #e3e4e8,
+  A400: #b1b5c3,
+  A700: #515770,
+  contrast: (
+    50: $light-primary-text,
+    100: $light-primary-text,
+    200: $light-primary-text,
+    300: $light-primary-text,
+    400: $light-primary-text,
+    500: $light-primary-text,
+    600: $light-primary-text,
+    700: $light-primary-text,
+    800: $dark-primary-text,
+    900: $dark-primary-text,
+    A100: $light-primary-text,
+    A200: $light-primary-text,
+    A400: $light-primary-text,
+    A700: $light-primary-text,
+  ),
+);
+
+$dark-bg: map.get($theme-slate, 900);
+$light-bg: map.get($theme-slate, 100);
+
+// Light bg
+$light-bg-darker-5: map.get($theme-slate, 200);
+$light-bg-darker-10: map.get($theme-slate, 300);
+$light-bg-darker-20: map.get($theme-slate, 400);
+$light-bg-darker-30: map.get($theme-slate, 500);
+$light-bg-lighter-5: map.get($theme-slate, 50);
+$dark-bg-tooltip: lighten(map.get($theme-slate, 600), 20%);
+$dark-bg-alpha-4: rgba(map.get($theme-slate, 600), 0.04);
+$dark-bg-alpha-12: rgba(map.get($theme-slate, 600), 0.12);
+
+// Dark bg
+$dark-bg-lighter-5: map.get($theme-slate, 850);
+$dark-bg-lighter-10: map.get($theme-slate, 800);
+$dark-bg-lighter-20: map.get($theme-slate, 700);
+$dark-bg-lighter-30: map.get($theme-slate, 600);
+$light-bg-alpha-4: rgba(map.get($theme-slate, 300), 0.04);
+$light-bg-alpha-12: rgba(map.get($theme-slate, 300), 0.12);
+
+$theme-indigo: (
+  50: #ecedf7,
+  100: #cfd3ec,
+  200: #afb6df,
+  300: #8f99d2,
+  400: #7783c9,
+  500: #5f6dbf,
+  600: #5765b9,
+  700: #4d5ab1,
+  800: #4350a9,
+  900: #323e9b,
+  A100: #e4e7ff,
+  A200: #b1b9ff,
+  A400: #7e8bff,
+  A700: #6474ff,
+  contrast: (
+    50: $light-primary-text,
+    100: $light-primary-text,
+    200: $light-primary-text,
+    300: $light-primary-text,
+    400: $light-primary-text,
+    500: $dark-primary-text,
+    600: $dark-primary-text,
+    700: $dark-primary-text,
+    800: $dark-primary-text,
+    900: $dark-primary-text,
+    A100: $light-primary-text,
+    A200: $light-primary-text,
+    A400: $light-primary-text,
+    A700: $dark-primary-text,
+  ),
+);
+
+$theme-pink: (
+  50: #fff5f9,
+  100: #ffe7f1,
+  200: #ffd7e8,
+  300: #ffc7de,
+  400: #ffbbd7,
+  500: #ffafd0,
+  600: #ffa8cb,
+  700: #ff9fc4,
+  800: #ff96be,
+  900: #ff86b3,
+  A100: #ffe6ef,
+  A200: #ffb5d1,
+  A400: #ff82b2,
+  A700: #ff448c,
+  contrast: (
+    50: $light-primary-text,
+    100: $light-primary-text,
+    200: $light-primary-text,
+    300: $light-primary-text,
+    400: $light-primary-text,
+    500: $light-primary-text,
+    600: $light-primary-text,
+    700: $light-primary-text,
+    800: $light-primary-text,
+    900: $light-primary-text,
+    A100: $light-primary-text,
+    A200: $light-primary-text,
+    A400: $light-primary-text,
+    A700: $light-primary-text,
+  ),
+);
+
+$theme-violet: (
+  50: #f8eff8,
+  100: #efd6ed,
+  200: #e4bbe1,
+  300: #d9a0d5,
+  400: #d08bcc,
+  500: #c877c3,
+  600: #c26fbd,
+  700: #bb64b5,
+  800: #b45aae,
+  900: #a747a1,
+  A100: #ffebfe,
+  A200: #ffcdfc,
+  A400: #ff9af8,
+  A700: #ff80f6,
+  contrast: (
+    50: $light-primary-text,
+    100: $light-primary-text,
+    200: $light-primary-text,
+    300: $light-primary-text,
+    400: $light-primary-text,
+    500: $light-primary-text,
+    600: $light-primary-text,
+    700: $light-primary-text,
+    800: $dark-primary-text,
+    900: $dark-primary-text,
+    A100: $light-primary-text,
+    A200: $light-primary-text,
+    A400: $light-primary-text,
+    A700: $light-primary-text,
+  ),
+);
+
+$theme-blue: (
+  50: #e4f1fa,
+  100: #bcdbf4,
+  200: #8fc4ec,
+  300: #62ace4,
+  400: #409adf,
+  500: #1e88d9,
+  600: #1a80d5,
+  700: #1675cf,
+  800: #126bca,
+  900: #0a58c0,
+  A100: #ebf3ff,
+  A200: #b8d3ff,
+  A400: #85b4ff,
+  A700: #6ca4ff,
+  contrast: (
+    50: $light-primary-text,
+    100: $light-primary-text,
+    200: $light-primary-text,
+    300: $light-primary-text,
+    400: $light-primary-text,
+    500: $dark-primary-text,
+    600: $dark-primary-text,
+    700: $dark-primary-text,
+    800: $dark-primary-text,
+    900: $dark-primary-text,
+    A100: $light-primary-text,
+    A200: $light-primary-text,
+    A400: $light-primary-text,
+    A700: $light-primary-text,
+  ),
+);
+
+$theme-green: (
+  50: #e1f8f0,
+  100: #b4eeda,
+  200: #82e3c1,
+  300: #50d8a8,
+  400: #2bcf96,
+  500: #05c783,
+  600: #04c17b,
+  700: #04ba70,
+  800: #03b366,
+  900: #01a653,
+  A100: #eefdf5,
+  A200: #9dffc7,
+  A400: #6affab,
+  A700: #51ff9c,
+  contrast: (
+    50: $light-primary-text,
+    100: $light-primary-text,
+    200: $light-primary-text,
+    300: $light-primary-text,
+    400: $light-primary-text,
+    500: $light-primary-text,
+    600: $light-primary-text,
+    700: $dark-primary-text,
+    800: $dark-primary-text,
+    900: $dark-primary-text,
+    A100: $light-primary-text,
+    A200: $light-primary-text,
+    A400: $light-primary-text,
+    A700: $light-primary-text,
+  ),
+);
+
+$theme-yellow: (
+  50: #fef9e5,
+  100: #fdefbd,
+  200: #fce591,
+  300: #fbdb65,
+  400: #fad344,
+  500: #f9cb23,
+  600: #f8c61f,
+  700: #f7be1a,
+  800: #f6b815,
+  900: #f5ac0c,
+  A100: #fffdfa,
+  A200: #fff2da,
+  A400: #ffdb8f,
+  A700: #ffc55b,
+  contrast: (
+    50: $light-primary-text,
+    100: $light-primary-text,
+    200: $light-primary-text,
+    300: $light-primary-text,
+    400: $light-primary-text,
+    500: $light-primary-text,
+    600: $light-primary-text,
+    700: $light-primary-text,
+    800: $light-primary-text,
+    900: $light-primary-text,
+    A100: $light-primary-text,
+    A200: $light-primary-text,
+    A400: $light-primary-text,
+    A700: $light-primary-text,
+  ),
+);
+
+$theme-orange: (
+  50: #fff1e7,
+  100: #ffddc2,
+  200: #ffc699,
+  300: #ffaf70,
+  400: #ff9d52,
+  500: #ff8c33,
+  600: #ff842e,
+  700: #ff7927,
+  800: #ff6f20,
+  900: #ff5c14,
+  A100: #fff4f1,
+  A200: #ffd7ca,
+  A400: #ffb295,
+  A700: #ff8356,
+  contrast: (
+    50: $light-primary-text,
+    100: $light-primary-text,
+    200: $light-primary-text,
+    300: $light-primary-text,
+    400: $light-primary-text,
+    500: $light-primary-text,
+    600: $light-primary-text,
+    700: $light-primary-text,
+    800: $light-primary-text,
+    900: $light-primary-text,
+    A100: $light-primary-text,
+    A200: $light-primary-text,
+    A400: $light-primary-text,
+    A700: $light-primary-text,
+  ),
+);
+
+$theme-red: (
+  50: #fde9e9,
+  100: #f9c8c8,
+  200: #f6a3a3,
+  300: #f27e7e,
+  400: #ef6262,
+  500: #ec4646,
+  600: #ea3f3f,
+  700: #e73737,
+  800: #e42f2f,
+  900: #df2020,
+  A100: #ffd3d3,
+  A200: #ffa7a7,
+  A400: #ff5f5f,
+  A700: #ff4141,
+  contrast: (
+    50: $light-primary-text,
+    100: $light-primary-text,
+    200: $light-primary-text,
+    300: $light-primary-text,
+    400: $light-primary-text,
+    500: $dark-primary-text,
+    600: $dark-primary-text,
+    700: $dark-primary-text,
+    800: $dark-primary-text,
+    900: $dark-primary-text,
+    A100: $light-primary-text,
+    A200: $light-primary-text,
+    A400: $light-primary-text,
+    A700: $light-primary-text,
+  ),
+);
