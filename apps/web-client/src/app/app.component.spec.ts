@@ -1,46 +1,15 @@
-import { TestBed, async, waitForAsync, fakeAsync } from '@angular/core/testing';
-import { HttpClient } from '@angular/common/http';
-import {
-  HttpClientTestingModule,
-  HttpTestingController,
-} from '@angular/common/http/testing';
-import {
-  TranslateLoader,
-  TranslateModule,
-  TranslateService,
-} from '@ngx-translate/core';
-import { TranslateHttpLoader } from '@ngx-translate/http-loader';
+import { TestBed, waitForAsync } from '@angular/core/testing';
 import { AppComponent } from './app.component';
 import { RouterModule } from '@angular/router';
-
-// eslint-disable-next-line @typescript-eslint/no-var-requires
-const translationsEn = require('../assets/i18n/en.json');
-export function HttpLoaderFactory(httpClient: HttpClient) {
-  return new TranslateHttpLoader(httpClient);
-}
+import { provideMockStore } from '@ngrx/store/testing';
 
 describe('AppComponent', () => {
-  let translate: TranslateService;
-  let http: HttpTestingController;
-
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      imports: [
-        HttpClientTestingModule,
-        RouterModule,
-        TranslateModule.forRoot({
-          loader: {
-            provide: TranslateLoader,
-            useFactory: HttpLoaderFactory,
-            deps: [HttpClient],
-          },
-        }),
-      ],
+      imports: [RouterModule],
       declarations: [AppComponent],
-      providers: [TranslateService],
+      providers: [provideMockStore({ initialState: { theme: 'light' } })],
     }).compileComponents();
-    translate = TestBed.get(TranslateService);
-    http = TestBed.get(HttpTestingController);
   }));
   it('should create the app', waitForAsync(() => {
     const fixture = TestBed.createComponent(AppComponent);

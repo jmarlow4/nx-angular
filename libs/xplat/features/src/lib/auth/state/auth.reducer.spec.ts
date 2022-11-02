@@ -1,27 +1,20 @@
 import { Action } from '@ngrx/store';
 
 import * as AuthActions from './auth.actions';
-import { AuthEntity } from './auth.models';
-import { AuthState, initialAuthState, authReducer } from './auth.reducer';
+import { authReducer } from './auth.reducer';
+import { AuthState, initialAuthState } from './auth.state';
 
-describe('Auth Reducer', () => {
-  const createAuthEntity = (id: string, name = ''): AuthEntity => ({
-    id,
-    name: name || `name-${id}`,
-  });
-
+fdescribe('Auth Reducer', () => {
   describe('valid Auth actions', () => {
-    it('loadAuthSuccess should return the list of known Auth', () => {
-      const auth = [
-        createAuthEntity('PRODUCT-AAA'),
-        createAuthEntity('PRODUCT-zzz'),
-      ];
-      const action = AuthActions.loadAuthSuccess({ auth });
+    it('initAuth should modify state indicating auth initialization', () => {
+      const action = AuthActions.initAuth();
 
       const result: AuthState = authReducer(initialAuthState, action);
 
-      expect(result.loaded).toBe(true);
-      expect(result.ids.length).toBe(2);
+      expect(result.loaded).toBe(false);
+      expect(result.pending).toBe(true);
+      expect(result.sessionError).toBe(null);
+      expect(result.userError).toBe(null);
     });
   });
 

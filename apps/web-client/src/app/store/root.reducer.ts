@@ -22,8 +22,8 @@ export const reducers: ActionReducerMap<RootState> = {
 };
 
 export function localStorageSyncReducer(
-  reducer: ActionReducer<any>
-): ActionReducer<any> {
+  reducer: ActionReducer<RootState>
+): ActionReducer<RootState> {
   return localStorageSync({ keys: ['theme'], rehydrate: true })(reducer);
 }
 
