@@ -2,16 +2,15 @@
  * Shared across all platforms and apps
  * You may define a set of global variables accessible across entire workspace here
  */
- @use 'sass:map';
+@use 'sass:map';
 
- @import 'colors';
- 
- $red: map.get($theme-red, 500);
- $orange: map.get($theme-orange, 500);
- $yellow: map.get($theme-yellow, 500);
- $green: map.get($theme-green, 500);
- $blue: map.get($theme-blue, 500);
- $indigo: map.get($theme-indigo, 500);
- $violet: map.get($theme-violet, 500);
- $pink: map.get($theme-pink, 500);
- 
+@import 'colors';
+
+$red: map.get($theme-red, 500);
+$orange: map.get($theme-orange, 500);
+$yellow: map.get($theme-yellow, 500);
+$green: map.get($theme-green, 500);
+$blue: map.get($theme-blue, 500);
+$indigo: map.get($theme-indigo, 500);
+$violet: map.get($theme-violet, 500);
+$pink: map.get($theme-pink, 500);

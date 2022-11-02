@@ -22,7 +22,7 @@ export class MergedRouterStateSerializer
 
 function mergeRouteParams(
   route: ActivatedRouteSnapshot,
-  getter: (r: ActivatedRouteSnapshot) => Params,
+  getter: (r: ActivatedRouteSnapshot) => Params
 ): Params {
   if (!route) {
     return {};

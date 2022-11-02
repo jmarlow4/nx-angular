@@ -11,13 +11,13 @@ const reducer = createReducer(
   on(selectTheme, (state, { theme }) =>
     produce(state, (draftState) => {
       draftState.theme = theme;
-    }),
-  ),
+    })
+  )
 );
 
 export function themeSelectReducer(
   state: ThemeSelectState | undefined,
-  action: Action,
+  action: Action
 ) {
   return reducer(state, action);
 }

@@ -6,40 +6,40 @@ export const getAuthState = createFeatureSelector<AuthState>(AUTH_FEATURE_KEY);
 
 export const getAuthInitialized = createSelector(
   getAuthState,
-  (state: AuthState) => state.initialized,
+  (state: AuthState) => state.initialized
 );
 
 export const getAuthLoaded = createSelector(
   getAuthState,
-  (state: AuthState) => state.loaded,
+  (state: AuthState) => state.loaded
 );
 
 export const getAuthError = createSelector(
   getAuthState,
-  (state: AuthState) => state.authError,
+  (state: AuthState) => state.authError
 );
 
 export const getAuthUser = createSelector(
   getAuthState,
-  (state: AuthState) => state.user,
+  (state: AuthState) => state.user
 );
 
 export const getAuthSession = createSelector(
   getAuthState,
-  (state: AuthState) => state.session,
+  (state: AuthState) => state.session
 );
 
 export const getInitUserError = createSelector(
   getAuthState,
-  (state: AuthState) => state.userError,
+  (state: AuthState) => state.userError
 );
 
 export const getInitSessionError = createSelector(
   getAuthState,
-  (state: AuthState) => state.sessionError,
+  (state: AuthState) => state.sessionError
 );
 
 export const getAuthPending = createSelector(
   getAuthState,
-  (state: AuthState) => state.pending,
+  (state: AuthState) => state.pending
 );

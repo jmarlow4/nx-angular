@@ -25,10 +25,10 @@ export class AuthEffects {
                 return AuthActions.initAuthNull();
               }
             }
-          }),
-        ),
-      ),
-    ),
+          })
+        )
+      )
+    )
   );
 
   login$ = createEffect(() =>
@@ -41,12 +41,12 @@ export class AuthEffects {
             AuthActions.loginSuccess({
               user: res.data.user as User,
               session: res.data.session as Session,
-            }),
+            })
           ),
-          catchError((error) => of(AuthActions.loginFailure({ error }))),
-        ),
-      ),
-    ),
+          catchError((error) => of(AuthActions.loginFailure({ error })))
+        )
+      )
+    )
   );
 
   register$ = createEffect(() =>
@@ -59,12 +59,12 @@ export class AuthEffects {
             AuthActions.loginSuccess({
               user: res.data.user as User,
               session: res.data.session as Session,
-            }),
+            })
           ),
-          catchError((error) => of(AuthActions.loginFailure({ error }))),
-        ),
-      ),
-    ),
+          catchError((error) => of(AuthActions.loginFailure({ error })))
+        )
+      )
+    )
   );
 
   logout$ = createEffect(() =>
@@ -73,15 +73,15 @@ export class AuthEffects {
       concatMap(() =>
         this.auth.logOut().pipe(
           map(() => AuthActions.logoutSuccess()),
-          catchError((error) => of(AuthActions.logoutFailure({ error }))),
-        ),
-      ),
-    ),
+          catchError((error) => of(AuthActions.logoutFailure({ error })))
+        )
+      )
+    )
   );
 
   constructor(
     private readonly actions$: Actions,
-    private readonly auth: AuthService,
+    private readonly auth: AuthService
   ) {}
 }
 // https://nrwzdxludreygmeecllg.supabase.co/auth/v1/verify?token=5c7cd273341b3f553e73bdaed00c46f18dc52c26ab61a26a81ebe532&type=signup&redirect_to=http://localhost:4200/

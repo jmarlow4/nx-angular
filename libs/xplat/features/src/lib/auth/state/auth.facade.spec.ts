@@ -87,7 +87,7 @@ describe('AuthFacade', () => {
       store.dispatch(
         AuthActions.loadAuthSuccess({
           auth: [createAuthEntity('AAA'), createAuthEntity('BBB')],
-        }),
+        })
       );
 
       list = await readFirst(facade.allAuth$);

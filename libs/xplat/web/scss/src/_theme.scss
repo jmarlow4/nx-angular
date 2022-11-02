@@ -72,12 +72,11 @@ $mat-accent: (
   lighter: $theme-accent-lighter-color,
   darker: $theme-accent-darker-color,
   200: $theme-accent-200-color,
-  contrast:
-    (
-      main: $dark-primary-text,
-      lighter: $dark-primary-text,
-      darker: $dark-primary-text,
-    ),
+  contrast: (
+    main: $dark-primary-text,
+    lighter: $dark-primary-text,
+    darker: $dark-primary-text,
+  ),
 );
 $theme-accent: mat.define-palette($mat-accent, main, lighter, darker);
 
@@ -86,12 +85,11 @@ $mat-warn: (
   lighter: $theme-warn-lighter-color,
   darker: $theme-warn-darker-color,
   200: $theme-warn-200-color,
-  contrast:
-    (
-      main: $light-primary-text,
-      lighter: $dark-primary-text,
-      darker: $light-primary-text,
-    ),
+  contrast: (
+    main: $light-primary-text,
+    lighter: $dark-primary-text,
+    darker: $light-primary-text,
+  ),
 );
 $theme-warn: mat.define-palette($mat-warn, main, lighter, darker);
 

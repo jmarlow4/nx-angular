@@ -16,5 +16,5 @@ export const reducer = createReducer(
 
   on(LayoutActions.setSidenav, (state, action) => ({
     sidenavIsOpen: action.isOpen,
-  })),
+  }))
 );

@@ -5,10 +5,10 @@ export const initApp = createAction('[Init] Initialize App');
 
 export const initAppSuccess = createAction(
   '[Init] Initialize App Success',
-  props<{ initialized: boolean }>(),
+  props<{ initialized: boolean }>()
 );
 
 export const initAppFailure = createAction(
   '[Init] Initialize App Failure',
-  props<{ initialized: boolean; error: HttpErrorResponse }>(),
+  props<{ initialized: boolean; error: HttpErrorResponse }>()
 );

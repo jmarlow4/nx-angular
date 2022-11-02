@@ -64,7 +64,7 @@ const reducer = createReducer(
     ...state,
     loaded: false,
     authError: error,
-  })),
+  }))
 );
 
 export function authReducer(state: AuthState | undefined, action: Action) {

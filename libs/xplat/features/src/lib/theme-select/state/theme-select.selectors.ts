@@ -5,10 +5,10 @@ import {
 } from './theme-select.state';
 
 export const getThemeSelectState = createFeatureSelector<ThemeSelectState>(
-  THEME_SELECT_FEATURE_KEY,
+  THEME_SELECT_FEATURE_KEY
 );
 
 export const getSelectedTheme = createSelector(
   getThemeSelectState,
-  (state: ThemeSelectState) => state.theme,
+  (state: ThemeSelectState) => state.theme
 );
