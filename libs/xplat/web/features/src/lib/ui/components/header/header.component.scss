@@ -1,5 +1,4 @@
-@use '@angular/material' as mat;
-@import '@nx-angular/xplat-web-scss';
+@import '@nx-angular/xplat-scss/colors';
 
 ::ng-deep .light .mat-toolbar.client-web-header {
   background-color: $theme-lightest;
@@ -21,9 +20,6 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    .nav-label {
-      @include mat.typography-level($fontConfig, 'icon-button-label');
-    }
   }
   &.is-mobile {
     .mat-button.nav-button {

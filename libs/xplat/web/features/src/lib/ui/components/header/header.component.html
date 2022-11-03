@@ -20,7 +20,9 @@
       <div>
         <mat-icon>{{ route.value.icon }}</mat-icon>
       </div>
-      <div class="nav-label uppercase">{{ route.value.navLabel }}</div>
+      <div class="text-xs uppercase">
+        {{ route.value.navLabel }}
+      </div>
     </a>
   </div>
   <div class="nav flex flex-row" [ngClass]="{ 'is-mobile': isMobile }">

@@ -72,7 +72,7 @@
     "@ngx-translate/core": "~14.0.0",
     "@ngx-translate/http-loader": "~7.0.0",
     "@nx-angular/xplat-scss": "file:libs/xplat/scss/src",
-    "@nx-angular/xplat-web-scss": "file:libs/xplat/web/scss/src",
+    "@nx-angular/xplat-web-scss": "link:libs/xplat/web/scss/src",
     "@supabase/supabase-js": "^2.0.5",
     "core-js": "^3.6.5",
     "immer": "^9.0.16",
