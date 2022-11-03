@@ -5,7 +5,8 @@
   "scripts": {
     "start": "nx serve",
     "build": "nx build",
-    "test": "nx test"
+    "test": "nx test",
+    "prepare": "husky install"
   },
   "private": true,
   "devDependencies": {
@@ -16,6 +17,8 @@
     "@angular/cli": "~14.2.0",
     "@angular/compiler-cli": "~14.2.0",
     "@angular/language-service": "~14.2.0",
+    "@commitlint/cli": "^17.2.0",
+    "@commitlint/config-conventional": "^17.2.0",
     "@nrwl/angular": "15.0.4",
     "@nrwl/cli": "15.0.4",
     "@nrwl/cypress": "15.0.4",
@@ -33,16 +36,22 @@
     "@typescript-eslint/eslint-plugin": "^5.36.1",
     "@typescript-eslint/parser": "^5.36.1",
     "autoprefixer": "^10.4.0",
+    "commitizen": "^4.2.5",
     "cypress": "^10.7.0",
     "eslint": "~8.15.0",
     "eslint-config-prettier": "8.1.0",
     "eslint-plugin-cypress": "^2.10.3",
+    "husky": "^7.0.0",
     "jest": "28.1.1",
     "jest-environment-jsdom": "28.1.1",
     "jest-preset-angular": "~12.2.2",
+    "lint-staged": "^13.0.3",
     "nx": "15.0.4",
     "postcss": "^8.4.5",
     "prettier": "^2.6.2",
+    "stylelint": "^14.14.0",
+    "stylelint-config-prettier-scss": "^0.0.1",
+    "stylelint-config-standard-scss": "^6.0.0",
     "tailwindcss": "^3.0.2",
     "ts-jest": "28.0.5",
     "ts-node": "10.9.1",
@@ -75,10 +84,24 @@
     "@nx-angular/xplat-web-scss": "link:libs/xplat/web/scss/src",
     "@supabase/supabase-js": "^2.0.5",
     "core-js": "^3.6.5",
+    "cz-conventional-changelog": "^3.3.0",
     "immer": "^9.0.16",
     "ngrx-store-localstorage": "^14.0.0",
     "rxjs": "~7.5.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.11.4"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  },
+  "lint-staged": {
+    "**/*.{js,jsx,ts,tsx}": [
+      "npx nx run-many --target=lint --all --exclude=xplat-scss,xplat-web-scss"
+    ],
+    "**/*.scss": [
+      "npx stylelint '**/*.scss'"
+    ]
   }
 }
