@@ -6,6 +6,8 @@
 
 @use '@angular/material' as mat;
 @use 'sass:map';
+@include mat.core();
+
 @import '@nx-angular/xplat-scss';
 
 // Fonts

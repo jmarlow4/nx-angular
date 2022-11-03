@@ -2,5 +2,31 @@
   "extends": [
     "stylelint-config-standard-scss",
     "stylelint-config-prettier-scss"
-  ]
+  ],
+  "rules": {
+    "at-rule-no-unknown": null,
+    "at-rule-no-vendor-prefix": null,
+    "declaration-no-important": true,
+    "max-nesting-depth": 3,
+    "no-duplicate-selectors": true,
+    "property-no-vendor-prefix": null,
+    "scss/at-rule-no-unknown": null,
+    "selector-max-id": 0,
+    "selector-no-qualifying-type": null,
+    "selector-pseudo-element-no-unknown": null,
+    "selector-no-vendor-prefix": null,
+    "value-no-vendor-prefix": null,
+    "rule-empty-line-before": null,
+    "font-family-no-missing-generic-family-keyword": null,
+    "no-descending-specificity": null,
+    "comment-empty-line-before": null,
+    "block-no-empty": null,
+    "scss/dollar-variable-empty-line-before": null,
+    "scss/dollar-variable-pattern": null,
+    "custom-property-empty-line-before": null,
+    "import-notation": null,
+    "scss/no-global-function-names": null,
+    "no-invalid-position-at-import-rule": null,
+    "scss/at-mixin-argumentless-call-parentheses": null
+  }
 }

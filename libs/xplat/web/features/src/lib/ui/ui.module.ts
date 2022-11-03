@@ -10,6 +10,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatCardModule } from '@angular/material/card';
 import { MatInputModule } from '@angular/material/input';
+import { MatDividerModule } from '@angular/material/divider';
 import { MatButtonModule } from '@angular/material/button';
 import { MatTabsModule } from '@angular/material/tabs';
 
@@ -24,6 +25,7 @@ const MODULES = [
   ReactiveFormsModule,
   UISharedModule,
   MatToolbarModule,
+  MatDividerModule,
   MatSlideToggleModule,
   MatIconModule,
   MatButtonModule,
