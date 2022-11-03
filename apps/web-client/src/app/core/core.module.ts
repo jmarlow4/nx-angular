@@ -1,9 +1,9 @@
 import { NgModule } from '@angular/core';
 
 // xplat
-import { ClientCoreModule } from '@nx-angular/xplat/web/core';
+import { WebCoreModule } from '@nx-angular/xplat/web/core';
 
 @NgModule({
-  imports: [ClientCoreModule],
+  imports: [WebCoreModule],
 })
 export class CoreModule {}

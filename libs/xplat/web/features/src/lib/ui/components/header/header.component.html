@@ -1,6 +1,60 @@
-<div style="text-align: center">
-  <h2>-- An app built with Nx and xplat --</h2>
-  <img width="100" src="assets/nx-logo.png" />
-  <span style="position: relative; top: -28px; margin: 10px">+</span>
-  <img width="120" src="assets/xplat.png" />
-</div>
+<mat-toolbar
+  class="client-web-header flex justify-between flex-grow-0 mat-elevation-z3 z-30 fixed p-0"
+>
+  <div class="nav" [ngClass]="{ 'is-mobile': isMobile }">
+    <a mat-button class="nav-button" [routerLink]="'/'">
+      <mat-icon>home</mat-icon>
+    </a>
+  </div>
+  <div
+    class="nav flex flex-row justify-center items-center"
+    [ngClass]="{ 'is-mobile': isMobile }"
+  >
+    <a
+      *ngFor="let route of routes | keyvalue: routeAscOrder"
+      class="nav-button"
+      mat-button
+      [routerLink]="route.value.path"
+      [routerLinkActive]="'header-link-active'"
+    >
+      <div>
+        <mat-icon>{{ route.value.icon }}</mat-icon>
+      </div>
+      <div class="text-xs uppercase">
+        {{ route.value.navLabel }}
+      </div>
+    </a>
+  </div>
+  <div class="nav flex flex-row" [ngClass]="{ 'is-mobile': isMobile }">
+    <div class="flex flex-row items-center mr-2">
+      <mat-icon class="mr-2">dark_mode</mat-icon>
+      <mat-slide-toggle
+        #themeToggle
+        [checked]="isDarkTheme"
+        (change)="toggleTheme($event)"
+      ></mat-slide-toggle>
+    </div>
+    <a
+      mat-button
+      class="nav-button"
+      [routerLink]="'profile'"
+      [routerLinkActive]="'active'"
+    >
+      <mat-icon>account_circle</mat-icon>
+    </a>
+  </div>
+</mat-toolbar>
+<mat-menu #menu="matMenu" color="accent">
+  <button mat-menu-item>
+    <mat-icon>dialpad</mat-icon>
+    <span>Redial</span>
+  </button>
+  <button mat-menu-item disabled>
+    <mat-icon>voicemail</mat-icon>
+    <span>Check voice mail</span>
+  </button>
+  <button mat-menu-item>
+    <mat-icon>notifications_off</mat-icon>
+    <span>Disable alerts</span>
+  </button>
+</mat-menu>

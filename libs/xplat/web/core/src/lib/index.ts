@@ -1,1 +1,2 @@
-export { ClientCoreModule } from './core.module';
+export { WebCoreModule } from './core.module';
+export * from './ngrx-router';

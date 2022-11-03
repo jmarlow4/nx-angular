@@ -1,5 +1,5 @@
 // shared across all platforms and apps
-@import '@nx-angular/xplat-scss/index';
+@import '@nx-angular/xplat-scss';
 
 /**
  * The following are web specific (used with any web app targets)
@@ -9,5 +9,5 @@
 @import 'variables';
 
 // web styles (create/import other scss files or define as needed)
-@import 'spacing';
 @import 'tags';
+@import 'theme';

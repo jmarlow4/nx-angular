@@ -1,0 +1,274 @@
+/**
+* Generated theme by Material Theme Generator
+* https://materialtheme.arcsine.dev
+* Fork at: https://materialtheme.arcsine.dev/?c=YHBhbGV0dGU$YHByaW1hcnk$YF48IzY0NTFjMSIsIj9lcjwjZDFjYmVjIiwiO2VyPCM0ODM3YWJ$LCIlPmBePCM1ZWRkNGIiLCI~ZXI8I2NmZjVjOSIsIjtlcjwjNDJjZjMzfiwid2Fybj5gXjwjZjQ1MjZjIiwiP2VyPCNmY2NiZDMiLCI7ZXI8I2VmMzg0Zn4sIj9UZXh0PCMyNDIwMzUiLCI~PTwjZTZlNWYyIiwiO1RleHQ8I2U2ZTVmMiIsIjs9PCMyNDIwMzV$LCJmb250cz5bYEA8KC00IiwiZmFtaWx5PEZpcmEgU2Fuc34sYEA8KC0zIiwiZmFtaWx5PEZpcmEgU2Fuc34sYEA8KC0yIiwiZmFtaWx5PEZpcmEgU2Fuc34sYEA8KC0xIiwiZmFtaWx5PEZpcmEgU2Fuc34sYEA8aGVhZGxpbmUiLCJmYW1pbHk8RmlyYSBTYW5zfixgQDx0aXRsZSIsImZhbWlseTxGaXJhIFNhbnN$LGBAPHN1YiktMiIsImZhbWlseTxGaXJhIFNhbnN$LGBAPHN1YiktMSIsImZhbWlseTxGaXJhIFNhbnN$LGBAPGJvZHktMiIsImZhbWlseTxGaXJhIFNhbnN$LGBAPGJvZHktMSIsImZhbWlseTxGaXJhIFNhbnN$LGBAPGJ1dHRvbiIsImZhbWlseTxGaXJhIFNhbnN$LGBAPGNhcHRpb24iLCJmYW1pbHk8RmlyYSBTYW5zfixgQDxpbnB1dCIsImZhbWlseTxGaXJhIFNhbnMiLCJzaXplPm51bGx9XSwiaWNvbnM8T3V0bGluZWQiLCI~bmVzcz50cnVlLCJ2ZXJzaW9uPjEyfQ==
+*/
+
+@use '@angular/material' as mat;
+@use 'sass:map';
+@import '@nx-angular/xplat-scss';
+
+// Fonts
+@import 'https://fonts.googleapis.com/css?family=Material+Icons+Outlined';
+@import url('https://fonts.googleapis.com/css?family=Fira+Sans:300,400,500');
+
+/* -=-=-=-=- PRIMARY COLOR -=-=-=-=- */
+$theme-primary-color: map.get($theme-indigo, 500);
+$theme-primary-lighter-color: map.get($theme-indigo, 300);
+$theme-primary-darker-color: map.get($theme-indigo, 700);
+$theme-primary-200-color: map.get($theme-indigo, 200);
+
+/* -=-=-=-=- ACCENT COLOR -=-=-=-=- */
+$theme-accent-color: map.get($theme-green, 500);
+$theme-accent-lighter-color: map.get($theme-green, 300);
+$theme-accent-darker-color: map.get($theme-green, 700);
+$theme-accent-200-color: map.get($theme-green, 200);
+
+/* -=-=-=-=- WARNING COLOR -=-=-=-=- */
+$theme-warn-color: map.get($theme-red, 500);
+$theme-warn-lighter-color: map.get($theme-red, 300);
+$theme-warn-darker-color: map.get($theme-red, 700);
+$theme-warn-200-color: map.get($theme-red, 200);
+
+body {
+  --primary-color: $theme-primary-color;
+  --primary-lighter-color: $theme-primary-lighter-color;
+  --primary-darker-color: $theme-primary-darker-color;
+  --text-primary-color: #{$dark-primary-text};
+  --text-primary-lighter-color: #{$dark-primary-text};
+  --text-primary-darker-color: #{$light-primary-text};
+
+  --accent-color: $theme-accent-color;
+  --accent-lighter-color: $theme-accent-lighter-color;
+  --accent-darker-color: $theme-accent-darker-color;
+  --text-accent-color: #{$dark-primary-text};
+  --text-accent-lighter-color: #{$dark-primary-text};
+  --text-accent-darker-color: #{$dark-primary-text};
+
+  --warn-color: $theme-warn-color;
+  --warn-lighter-color: $theme-warn-lighter-color;
+  --warn-darker-color: $theme-warn-darker-color;
+  --text-warn-color: #{$light-primary-text};
+  --text-warn-lighter-color: #{$dark-primary-text};
+  --text-warn-darker-color: #{$light-primary-text};
+}
+
+$mat-primary: (
+  main: $theme-primary-color,
+  lighter: $theme-primary-lighter-color,
+  darker: $theme-primary-darker-color,
+  200: $theme-primary-200-color,
+  contrast: (
+    main: $light-primary-text,
+    lighter: $dark-primary-text,
+    darker: $light-primary-text,
+  ),
+);
+$theme-primary: mat.define-palette($mat-primary, main, lighter, darker);
+
+$mat-accent: (
+  main: $theme-accent-color,
+  lighter: $theme-accent-lighter-color,
+  darker: $theme-accent-darker-color,
+  200: $theme-accent-200-color,
+  contrast: (
+    main: $dark-primary-text,
+    lighter: $dark-primary-text,
+    darker: $dark-primary-text,
+  ),
+);
+$theme-accent: mat.define-palette($mat-accent, main, lighter, darker);
+
+$mat-warn: (
+  main: $theme-warn-color,
+  lighter: $theme-warn-lighter-color,
+  darker: $theme-warn-darker-color,
+  200: $theme-warn-200-color,
+  contrast: (
+    main: $light-primary-text,
+    lighter: $dark-primary-text,
+    darker: $light-primary-text,
+  ),
+);
+$theme-warn: mat.define-palette($mat-warn, main, lighter, darker);
+
+$mat-light-theme-foreground: (
+  base: black,
+  divider: $dark-dividers,
+  dividers: $dark-dividers,
+  disabled: $dark-disabled-text,
+  disabled-button: rgba($dark-text, 0.26),
+  disabled-text: $dark-disabled-text,
+  elevation: black,
+  secondary-text: $dark-accent-text,
+  hint-text: $dark-disabled-text,
+  accent-text: $dark-accent-text,
+  icon: $dark-accent-text,
+  icons: $dark-accent-text,
+  text: $dark-primary-text,
+  slider-min: $dark-primary-text,
+  slider-off: rgba($dark-text, 0.26),
+  slider-off-active: $dark-disabled-text,
+);
+
+$mat-dark-theme-foreground: (
+  base: $light-text,
+  divider: $light-dividers,
+  dividers: $light-dividers,
+  disabled: $light-disabled-text,
+  disabled-button: rgba($light-text, 0.3),
+  disabled-text: $light-disabled-text,
+  elevation: black,
+  hint-text: $light-disabled-text,
+  secondary-text: $light-accent-text,
+  accent-text: $light-accent-text,
+  icon: $light-text,
+  icons: $light-text,
+  text: $light-text,
+  slider-min: $light-text,
+  slider-off: rgba($light-text, 0.3),
+  slider-off-active: rgba($light-text, 0.3),
+);
+
+$mat-light-theme-background: (
+  background: $light-bg,
+  status-bar: $light-bg-darker-20,
+  app-bar: $light-bg-darker-5,
+  hover: $dark-bg-alpha-4,
+  card: $light-bg-lighter-5,
+  dialog: $light-bg-lighter-5,
+  tooltip: $dark-bg-tooltip,
+  disabled-button: $dark-bg-alpha-12,
+  raised-button: $light-bg-lighter-5,
+  focused-button: $dark-focused,
+  selected-button: $light-bg-darker-20,
+  selected-disabled-button: $light-bg-darker-30,
+  disabled-button-toggle: $light-bg-darker-10,
+  unselected-chip: $light-bg-darker-10,
+  disabled-list-option: $light-bg-darker-10,
+);
+
+// Background palette for dark themes.
+$mat-dark-theme-background: (
+  background: $dark-bg,
+  status-bar: $dark-bg-lighter-20,
+  app-bar: $dark-bg-lighter-5,
+  hover: $light-bg-alpha-4,
+  card: $dark-bg-lighter-5,
+  dialog: $dark-bg-lighter-5,
+  tooltip: $dark-bg-lighter-20,
+  disabled-button: $light-bg-alpha-12,
+  raised-button: $dark-bg-lighter-5,
+  focused-button: $light-focused,
+  selected-button: $dark-bg-lighter-20,
+  selected-disabled-button: $dark-bg-lighter-30,
+  disabled-button-toggle: $dark-bg-lighter-10,
+  unselected-chip: $dark-bg-lighter-20,
+  disabled-list-option: $dark-bg-lighter-10,
+);
+
+// Theme Config
+$theme: (
+  primary: $theme-primary,
+  accent: $theme-accent,
+  warn: $theme-warn,
+  is-dark: false,
+  foreground: $mat-light-theme-foreground,
+  background: $mat-light-theme-background,
+);
+$altTheme: (
+  primary: $theme-primary,
+  accent: $theme-accent,
+  warn: $theme-warn,
+  is-dark: true,
+  foreground: $mat-dark-theme-foreground,
+  background: $mat-dark-theme-background,
+);
+
+// Theme Init
+.light {
+  @include mat.all-component-themes($theme);
+
+  // scrollbar
+  ::-webkit-scrollbar {
+    width: 12px;
+  }
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: $light-bg-lighter-5;
+  }
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: $light-bg-darker-10;
+    border-radius: 6px;
+  }
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: $light-bg-darker-20;
+  }
+}
+
+.dark {
+  @include mat.all-component-themes($altTheme);
+
+  ::-webkit-scrollbar {
+    width: 12px;
+  }
+
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: $dark-bg-lighter-5;
+  }
+
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: $dark-bg-lighter-10;
+    border-radius: 6px;
+  }
+
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: $dark-bg-lighter-20;
+  }
+  .mat-fab,
+  .mat-flat-button,
+  .mat-mini-fab,
+  .mat-raised-button {
+    color: $light-text;
+    background-color: $dark-bg-lighter-10;
+  }
+}
+
+* {
+  transition: background-color 200ms cubic-bezier(0.25, 0.8, 0.25, 1),
+    box-shadow 280ms cubic-bezier(0.4, 0, 0.2, 1),
+    color 100ms cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+// Specific component overrides, pieces that are not in line with the general theming
+
+// Handle buttons appropriately, with respect to line-height
+.mat-raised-button,
+.mat-stroked-button,
+.mat-flat-button {
+  padding: 0 1.15em;
+  margin: 0 0.65em;
+  min-width: 3em;
+  line-height: 36.4px;
+}
+
+.mat-standard-chip {
+  padding: 0.5em 0.85em;
+  min-height: 2.5em;
+}
+
+.material-icons {
+  font-size: 24px;
+  font-family: 'Material Icons Outlined', 'Material Icons';
+  .mat-badge-content {
+    font-family: 'Fira Sans';
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+}

@@ -1,0 +1,23 @@
+<div class="flex absolute h-screen w-full">
+  <client-web-header
+    [routes]="routes"
+    (themeChange)="handleThemeToggle($event)"
+    [isDarkTheme]="($theme | async) === 'dark'"
+    [isMobile]="$isMobile | async"
+  ></client-web-header>
+  <mat-sidenav-container
+    class="flex flex-auto mt-16 w-full"
+    [ngClass]="{ 'mt-14': $isMobile | async }"
+  >
+    <mat-sidenav></mat-sidenav>
+    <mat-sidenav-content class="flex flex-col w-full">
+      <main
+        class="flex flex-auto justify-center p-8"
+        [ngClass]="{ 'p-6': $isMobile | async }"
+      >
+        <router-outlet></router-outlet>
+      </main>
+      <footer class="flex flex-row justify-center">footer</footer>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+</div>

@@ -1,1 +1,1 @@
-export * from './app.base-component';
+export * from './web-base-component';

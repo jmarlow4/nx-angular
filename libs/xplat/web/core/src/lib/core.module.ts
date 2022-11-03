@@ -50,12 +50,12 @@ export function createTranslateLoader(http: HttpClient) {
     }),
   ],
 })
-export class ClientCoreModule {
+export class WebCoreModule {
   constructor(
     @Optional()
     @SkipSelf()
-    parentModule: ClientCoreModule
+    parentModule: WebCoreModule
   ) {
-    throwIfAlreadyLoaded(parentModule, 'ClientCoreModule');
+    throwIfAlreadyLoaded(parentModule, 'WebCoreModule');
   }
 }
