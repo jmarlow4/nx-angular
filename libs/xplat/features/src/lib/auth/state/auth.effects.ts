@@ -1,7 +1,8 @@
 import { Injectable } from '@angular/core';
+import { Router } from '@angular/router';
 import { createEffect, Actions, ofType } from '@ngrx/effects';
-import { AuthResponse, Session, User } from '@supabase/supabase-js';
-import { catchError, concatMap, filter, map, of } from 'rxjs';
+import { AuthError, AuthResponse, Session, User } from '@supabase/supabase-js';
+import { catchError, concatMap, exhaustMap, filter, map, of } from 'rxjs';
 import { AuthService } from '../services/auth.service';
 import * as AuthActions from './auth.actions';
 
@@ -19,16 +20,18 @@ export class AuthEffects {
                 session: sessionData,
               });
             } else {
-              if (userError && sessionError) {
-                return AuthActions.initAuthFailure({ userError, sessionError });
+              if (userError || sessionError) {
+                return AuthActions.initAuthFailure({
+                  error: userError || (sessionError as AuthError),
+                });
               } else {
                 return AuthActions.initAuthNull();
               }
             }
-          })
-        )
-      )
-    )
+          }),
+        ),
+      ),
+    ),
   );
 
   login$ = createEffect(() =>
@@ -37,16 +40,17 @@ export class AuthEffects {
       concatMap((creds: { email: string; password: string }) =>
         this.auth.login(creds).pipe(
           filter((res: AuthResponse) => !!(res.data.user && res.data.session)),
-          map((res: AuthResponse) =>
-            AuthActions.loginSuccess({
+          map((res: AuthResponse) => {
+            this.router.navigateByUrl('/');
+            return AuthActions.loginSuccess({
               user: res.data.user as User,
               session: res.data.session as Session,
-            })
-          ),
-          catchError((error) => of(AuthActions.loginFailure({ error })))
-        )
-      )
-    )
+            });
+          }),
+          catchError((error) => of(AuthActions.loginFailure({ error }))),
+        ),
+      ),
+    ),
   );
 
   register$ = createEffect(() =>
@@ -59,29 +63,30 @@ export class AuthEffects {
             AuthActions.loginSuccess({
               user: res.data.user as User,
               session: res.data.session as Session,
-            })
+            }),
           ),
-          catchError((error) => of(AuthActions.loginFailure({ error })))
-        )
-      )
-    )
+          catchError((error) => of(AuthActions.loginFailure({ error }))),
+        ),
+      ),
+    ),
   );
 
   logout$ = createEffect(() =>
     this.actions$.pipe(
       ofType(AuthActions.logout),
-      concatMap(() =>
+      exhaustMap(() =>
         this.auth.logOut().pipe(
           map(() => AuthActions.logoutSuccess()),
-          catchError((error) => of(AuthActions.logoutFailure({ error })))
-        )
-      )
-    )
+          catchError((error) => of(AuthActions.logoutFailure({ error }))),
+        ),
+      ),
+    ),
   );
 
   constructor(
     private readonly actions$: Actions,
-    private readonly auth: AuthService
+    private readonly auth: AuthService,
+    private router: Router,
   ) {}
 }
 // https://nrwzdxludreygmeecllg.supabase.co/auth/v1/verify?token=5c7cd273341b3f553e73bdaed00c46f18dc52c26ab61a26a81ebe532&type=signup&redirect_to=http://localhost:4200/

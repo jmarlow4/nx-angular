@@ -9,8 +9,6 @@ const reducer = createReducer(
     ...state,
     loaded: false,
     pending: true,
-    sessionError: null,
-    userError: null,
   })),
   on(AuthActions.initAuthSuccess, (state, { user, session }) => ({
     ...state,
@@ -19,27 +17,24 @@ const reducer = createReducer(
     error: null,
     user,
     session,
-    sessionError: null,
-    userError: null,
   })),
-  on(AuthActions.initAuthFailure, (state, { userError, sessionError }) => ({
+  on(AuthActions.initAuthFailure, (state, { error }) => ({
     ...state,
     initialized: true,
     loaded: false,
     user: null,
-    sessionError,
-    userError,
+    error,
   })),
   on(AuthActions.login || AuthActions.register, (state) => ({
     ...state,
     loaded: false,
     pending: true,
-    authError: null,
+    error: null,
   })),
   on(AuthActions.loginSuccess, (state, { user, session }) => ({
     ...state,
     loaded: false,
-    authError: null,
+    error: null,
     user,
     session,
   })),
@@ -47,24 +42,24 @@ const reducer = createReducer(
     ...state,
     loaded: false,
     user: null,
-    authError: error,
+    error: error,
   })),
   on(AuthActions.logout, (state) => ({
     ...state,
     pending: true,
-    authError: null,
+    error: null,
   })),
   on(AuthActions.logoutSuccess, (state) => ({
     ...state,
     loaded: false,
-    authError: null,
+    error: null,
     user: null,
   })),
   on(AuthActions.logoutFailure, (state, { error }) => ({
     ...state,
     loaded: false,
-    authError: error,
-  }))
+    error: error,
+  })),
 );
 
 export function authReducer(state: AuthState | undefined, action: Action) {

@@ -8,6 +8,7 @@ import { LayoutStateModule } from './layout/layout.module';
 import { environment } from '@nx-angular/xplat/core';
 import { ThemeSelectModule } from '@nx-angular/xplat/features';
 import { NgrxRouterStoreModule } from '@nx-angular/xplat/web/core';
+import { AppAuthStoreModule } from './auth/auth.module';
 
 @NgModule({
   imports: [
@@ -18,6 +19,7 @@ import { NgrxRouterStoreModule } from '@nx-angular/xplat/web/core';
     InitModule,
     LayoutStateModule,
     ThemeSelectModule,
+    AppAuthStoreModule,
   ],
 })
 export class AppStoreModule {}
