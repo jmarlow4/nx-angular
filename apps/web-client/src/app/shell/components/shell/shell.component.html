@@ -1,8 +1,6 @@
 <div class="flex absolute h-screen w-full">
   <client-web-header
     [routes]="routes"
-    (themeChange)="handleThemeToggle($event)"
-    [isDarkTheme]="($theme | async) === 'dark'"
     [isMobile]="$isMobile | async"
   ></client-web-header>
   <mat-sidenav-container

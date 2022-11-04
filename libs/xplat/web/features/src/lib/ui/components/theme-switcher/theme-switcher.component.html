@@ -1,0 +1,8 @@
+<div class="flex flex-row items-center mr-2">
+  <mat-icon class="mr-2">dark_mode</mat-icon>
+  <mat-slide-toggle
+    #themeToggle
+    [checked]="isDarkTheme"
+    (change)="toggleTheme($event)"
+  ></mat-slide-toggle>
+</div>

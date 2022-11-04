@@ -13,10 +13,15 @@ const routes: Routes = [
           import('../features/home/home.module').then((m) => m.HomeModule),
       },
       {
+        path: 'todo',
+        loadChildren: () =>
+          import('../features/todo/todo.module').then((m) => m.TodoModule),
+      },
+      {
         path: 'profile',
         loadChildren: () =>
           import('../features/profile/profile.module').then(
-            (m) => m.ProfileModule
+            (m) => m.ProfileModule,
           ),
       },
     ],

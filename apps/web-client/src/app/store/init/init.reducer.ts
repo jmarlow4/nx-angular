@@ -19,7 +19,7 @@ export const initialState: InitState = {
 export const reducer = createReducer(
   initialState,
 
-  on(initApp, (state) => ({
+  on(initApp, () => ({
     initialized: false,
     pending: true,
     error: null,
@@ -33,5 +33,5 @@ export const reducer = createReducer(
     initialized: action.initialized,
     pending: false,
     error: action.error,
-  }))
+  })),
 );

@@ -13,13 +13,13 @@ export class InitEffects {
       ofType(initApp),
       concatMap(() =>
         of(true).pipe(
-          // tap(() => this.authFacade.init()),
+          tap(() => this.authFacade.init()),
           map(() => initAppSuccess({ initialized: true })),
           catchError((error) =>
-            of(initAppFailure({ initialized: false, error }))
-          )
-        )
-      )
+            of(initAppFailure({ initialized: false, error })),
+          ),
+        ),
+      ),
     );
   });
 

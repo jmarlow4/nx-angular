@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { select, Store } from '@ngrx/store';
+import { Observable, skipWhile } from 'rxjs';
 
 import * as AuthActions from './auth.actions';
 import * as AuthSelectors from './auth.selectors';
@@ -9,10 +10,11 @@ export class AuthFacade {
   initialized$ = this.store.pipe(select(AuthSelectors.getAuthInitialized));
   loaded$ = this.store.pipe(select(AuthSelectors.getAuthLoaded));
   user$ = this.store.pipe(select(AuthSelectors.getAuthUser));
+  userId$: Observable<string> = this.store
+    .pipe(select(AuthSelectors.getAuthUserId))
+    .pipe(skipWhile((id) => !id)) as Observable<string>;
   pending$ = this.store.pipe(select(AuthSelectors.getAuthPending));
   error$ = this.store.pipe(select(AuthSelectors.getAuthError));
-  userError$ = this.store.pipe(select(AuthSelectors.getInitUserError));
-  sessionError$ = this.store.pipe(select(AuthSelectors.getInitSessionError));
 
   constructor(private readonly store: Store) {}
 

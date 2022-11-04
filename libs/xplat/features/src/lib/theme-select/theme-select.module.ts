@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 
 import { StoreModule } from '@ngrx/store';
+import { ThemeSelectFacade } from './state';
 
 import { themeSelectReducer } from './state/theme-select.reducer';
 
@@ -12,5 +13,6 @@ import { initialThemeSelectState } from './state/theme-select.state';
       initialState: initialThemeSelectState,
     }),
   ],
+  providers: [ThemeSelectFacade],
 })
 export class ThemeSelectModule {}

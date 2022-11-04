@@ -8,9 +8,7 @@ export interface AuthState {
   loaded: boolean;
   user: User | null;
   session: Session | null;
-  authError: AuthError | null;
-  sessionError: AuthError | null;
-  userError: AuthError | null;
+  error: AuthError | null;
 }
 
 export const initialAuthState: AuthState = {
@@ -19,7 +17,5 @@ export const initialAuthState: AuthState = {
   loaded: false,
   user: null,
   session: null,
-  authError: null,
-  sessionError: null,
-  userError: null,
+  error: null,
 };

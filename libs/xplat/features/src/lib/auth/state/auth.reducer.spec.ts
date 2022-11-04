@@ -4,7 +4,7 @@ import * as AuthActions from './auth.actions';
 import { authReducer } from './auth.reducer';
 import { AuthState, initialAuthState } from './auth.state';
 
-fdescribe('Auth Reducer', () => {
+describe('Auth Reducer', () => {
   describe('valid Auth actions', () => {
     it('initAuth should modify state indicating auth initialization', () => {
       const action = AuthActions.initAuth();
@@ -13,8 +13,7 @@ fdescribe('Auth Reducer', () => {
 
       expect(result.loaded).toBe(false);
       expect(result.pending).toBe(true);
-      expect(result.sessionError).toBe(null);
-      expect(result.userError).toBe(null);
+      expect(result.error).toBe(null);
     });
   });
 
