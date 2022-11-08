@@ -27,6 +27,7 @@
     "import-notation": null,
     "scss/no-global-function-names": null,
     "no-invalid-position-at-import-rule": null,
-    "scss/at-mixin-argumentless-call-parentheses": null
+    "scss/at-mixin-argumentless-call-parentheses": null,
+    "alpha-value-notation": null
   }
 }

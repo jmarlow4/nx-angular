@@ -1,6 +1,7 @@
 // angular
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { AuthGuard } from '@nx-angular/xplat/features';
 
 // app
 import { SharedModule } from './features/shared/shared.module';
@@ -8,6 +9,7 @@ import { SharedModule } from './features/shared/shared.module';
 const routes: Routes = [
   {
     path: '',
+    canActivate: [AuthGuard],
     loadChildren: () =>
       import('./shell/shell.module').then((m) => m.ShellModule),
   },

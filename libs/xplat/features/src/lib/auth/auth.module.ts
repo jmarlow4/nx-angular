@@ -6,10 +6,11 @@ import { AuthEffects } from './state/auth.effects';
 import { AuthFacade } from './state/auth.facade';
 import { AuthService } from './services/auth.service';
 import { AUTH_FEATURE_KEY } from './state/auth.state';
+import { AuthGuard } from './guards';
 
 @NgModule({
   schemas: [NO_ERRORS_SCHEMA],
-  providers: [AuthService, AuthFacade],
+  providers: [AuthService, AuthFacade, AuthGuard],
   imports: [
     StoreModule.forFeature(AUTH_FEATURE_KEY, fromAuth.authReducer),
     EffectsModule.forFeature([AuthEffects]),

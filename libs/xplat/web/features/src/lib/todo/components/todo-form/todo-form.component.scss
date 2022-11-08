@@ -1,0 +1,115 @@
+@import '@nx-angular/xplat-scss';
+
+::ng-deep .light .todo-menu {
+  color: $theme-darkest;
+}
+
+::ng-deep .dark .todo-menu {
+  color: $theme-lightest;
+}
+
+.list-color {
+  border-left: 3px solid;
+  border-bottom: 3px solid;
+  padding-left: 13px;
+  border-bottom-left-radius: 6px;
+  &.red {
+    border-color: $red;
+    .list-color-text.red {
+      color: $red;
+    }
+  }
+  &.orange {
+    border-color: $orange;
+    .list-color-text.orange {
+      color: $orange;
+    }
+  }
+  &.yellow {
+    border-color: $yellow;
+    .list-color-text.yellow {
+      color: $yellow;
+    }
+  }
+  &.green {
+    border-color: $green;
+    .list-color-text.green {
+      color: $green;
+    }
+  }
+  &.blue {
+    border-color: $blue;
+    .list-color-text.blue {
+      color: $blue;
+    }
+  }
+  &.indigo {
+    border-color: $indigo;
+    .list-color-text.indigo {
+      color: $indigo;
+    }
+  }
+  &.violet {
+    border-color: $violet;
+    .list-color-text.violet {
+      color: $violet;
+    }
+  }
+  &.pink {
+    border-color: $pink;
+    .list-color-text.pink {
+      color: $pink;
+    }
+  }
+}
+
+.list-color-picker {
+  .red {
+    background-color: $red;
+    &.selected {
+      border: solid 4px rgba($color: #fff, $alpha: 0.6);
+    }
+  }
+  .orange {
+    background-color: $orange;
+    &.selected {
+      border: solid 4px rgba($color: #fff, $alpha: 0.6);
+    }
+  }
+  .yellow {
+    background-color: $yellow;
+    &.selected {
+      border: solid 4px rgba($color: #fff, $alpha: 0.5);
+    }
+  }
+  .green {
+    background-color: $green;
+    &.selected {
+      border: solid 4px rgba($color: #fff, $alpha: 0.5);
+    }
+  }
+  .blue {
+    background-color: $blue;
+    &.selected {
+      border: solid 4px rgba($color: #fff, $alpha: 0.5);
+    }
+  }
+  .indigo {
+    background-color: $indigo;
+    &.selected {
+      border: solid 4px rgba($color: #fff, $alpha: 0.5);
+    }
+  }
+  .violet {
+    background-color: $violet;
+    &.selected {
+      border: solid 4px rgba($color: #fff, $alpha: 0.5);
+    }
+  }
+  .pink {
+    background-color: $pink;
+    &.selected {
+      border: solid 4px rgba($color: #fff, $alpha: 0.5);
+    }
+  }
+}

@@ -1,0 +1,40 @@
+<div
+  class="todo-menu"
+  (keydown.tab)="$event.stopPropagation()"
+  (keydown.shift.tab)="$event.stopPropagation()"
+  (click)="$event.stopPropagation()"
+>
+  <form
+    [formGroup]="todoForm"
+    (submit)="submitTodoForm($event)"
+    class="flex flex-row items-center px-4"
+  >
+    <mat-form-field>
+      <input
+        matInput
+        autocomplete="off"
+        #todoNameInput
+        formControlName="name"
+        placeholder="List Name"
+      />
+    </mat-form-field>
+    <div fxLayout="row" fxLayoutAlign="start center">
+      <button mat-icon-button [disabled]="todoForm.pristine" type="submit">
+        <mat-icon>check</mat-icon>
+      </button>
+    </div>
+  </form>
+  <div class="list-color-picker flex flex-row px-4">
+    <button
+      *ngFor="let color of colors; let last = last"
+      mat-icon-button
+      class="w-7 h-7 rounded-2xl {{ color }}"
+      [ngClass]="{
+        'mr-0': last,
+        'mr-1': !last,
+        selected: todoForm.controls.color.value === color
+      }"
+      (click)="selectColor(color)"
+    ></button>
+  </div>
+</div>

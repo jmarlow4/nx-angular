@@ -1,1 +1,8 @@
-<div>Todo</div>
+<div
+  *ngIf="$todo | async as todo"
+  class="{{ todo.color }}"
+  class="flex flex-col items-center"
+>
+  <h2 class="text-xl font-bold">{{ todo.text }}</h2>
+  <div>{{ todo.created_at | date: 'MM/dd/yyyy h:mm aa' }}</div>
+</div>

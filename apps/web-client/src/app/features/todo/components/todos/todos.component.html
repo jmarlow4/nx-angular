@@ -1,0 +1,35 @@
+<div
+  class="flex flex-row justify-between items-center"
+  [style.minWidth]="'400px'"
+>
+  <h2 class="text-xl font-bold">Todo Lists</h2>
+  <button
+    mat-raised-button
+    [matMenuTriggerFor]="createListMenu"
+    (click)="todoNameFocusSubject.next(null)"
+  >
+    Create new
+  </button>
+</div>
+<mat-menu #createListMenu="matMenu" xPosition="before"
+  ><web-todo-form
+    [focusSubject]="todoNameFocusSubject"
+    (onSubmit)="createTodo($event)"
+  ></web-todo-form
+></mat-menu>
+
+<div class="mt-8">
+  <div
+    *ngFor="let todo of $todos | async; let last = last"
+    [ngClass]="{ 'mb-0': last, 'mb-6': !last }"
+    class="flex flex-row justify-between w-full pl-4 py-2 todo-color {{
+      todo.color
+    }}"
+  >
+    <a class="text-left" [routerLink]="[todo.id]" mat-button
+      ><span class="todo-color-text">{{ todo.text }}</span></a
+    ><button mat-icon-button color="warn" (click)="deleteTodo(todo)">
+      <mat-icon>close</mat-icon>
+    </button>
+  </div>
+</div>

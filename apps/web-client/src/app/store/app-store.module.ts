@@ -9,11 +9,13 @@ import { environment } from '@nx-angular/xplat/core';
 import { ThemeSelectModule } from '@nx-angular/xplat/features';
 import { NgrxRouterStoreModule } from '@nx-angular/xplat/web/core';
 import { AppAuthStoreModule } from './auth/auth.module';
+import { AppAuthEffects } from './auth/auth.effects';
+import { AppTodoFacade } from './todo/app-todo.facade';
 
 @NgModule({
   imports: [
     StoreModule.forRoot(reducers, { metaReducers }),
-    EffectsModule.forRoot([]),
+    EffectsModule.forRoot([AppAuthEffects]),
     !environment.production ? StoreDevtoolsModule.instrument() : [],
     NgrxRouterStoreModule,
     InitModule,
@@ -21,5 +23,6 @@ import { AppAuthStoreModule } from './auth/auth.module';
     ThemeSelectModule,
     AppAuthStoreModule,
   ],
+  providers: [AppTodoFacade],
 })
 export class AppStoreModule {}

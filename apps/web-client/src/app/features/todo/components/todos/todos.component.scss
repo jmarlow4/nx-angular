@@ -1,0 +1,55 @@
+@import '@nx-angular/xplat-scss';
+
+.todo-color {
+  border-left: 2px solid;
+  border-bottom: 2px solid;
+  border-bottom-left-radius: 6px;
+  &.red {
+    border-color: $red;
+    .todo-color-text {
+      color: $red;
+    }
+  }
+  &.orange {
+    border-color: $orange;
+    .todo-color-text {
+      color: $orange;
+    }
+  }
+  &.yellow {
+    border-color: $yellow;
+    .todo-color-text {
+      color: $yellow;
+    }
+  }
+  &.green {
+    border-color: $green;
+    .todo-color-text {
+      color: $green;
+    }
+  }
+  &.blue {
+    border-color: $blue;
+    .todo-color-text {
+      color: $blue;
+    }
+  }
+  &.indigo {
+    border-color: $indigo;
+    .todo-color-text {
+      color: $indigo;
+    }
+  }
+  &.violet {
+    border-color: $violet;
+    .todo-color-text {
+      color: $violet;
+    }
+  }
+  &.pink {
+    border-color: $pink;
+    .todo-color-text {
+      color: $pink;
+    }
+  }
+}
