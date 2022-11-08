@@ -1,0 +1,10 @@
+import { createAction, props } from '@ngrx/store';
+import { <%= utils.classify(name) %>State } from './<%= name %>.state';
+
+export namespace <%= utils.classify(name) %>Actions {
+  export const init = createAction('[@<%= npmScope %>/<%= name %>] init');
+  // example with optional payload
+  export const load = createAction('[@<%= npmScope %>/<%= name %>] load', (payload: any = {}) => payload);
+  // example with strongly typed payload
+  export const loaded = createAction('[@<%= npmScope %>/<%= name %>] loaded', props<{ payload?: <%= utils.classify(name) %>State.IState }>());
+}

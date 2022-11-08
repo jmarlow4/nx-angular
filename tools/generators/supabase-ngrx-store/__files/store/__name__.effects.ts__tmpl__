@@ -1,0 +1,19 @@
+import { Injectable } from '@angular/core';
+import { Actions, createEffect, ofType } from '@ngrx/effects';
+import { map } from 'rxjs/operators';
+import { <%= utils.classify(name) %>Actions } from './<%= name %>.actions';
+
+@Injectable()
+export class <%= utils.classify(name) %>Effects {
+
+  load$ = createEffect(() =>
+    this.actions$.pipe(
+      ofType(<%= utils.classify(name) %>Actions.load),
+      map(() => <%= utils.classify(name) %>Actions.loaded({}))
+    )
+  );
+
+  constructor(
+    private actions$: Actions
+  ) {}
+}

@@ -1,4 +1,4 @@
-<div class="flex absolute h-screen w-full">
+<div class="flex flex-column absolute h-screen w-full">
   <client-web-header
     [routes]="routes"
     [isMobile]="$isMobile | async"
@@ -9,13 +9,12 @@
   >
     <mat-sidenav></mat-sidenav>
     <mat-sidenav-content class="flex flex-col w-full">
-      <main
-        class="flex flex-auto justify-center p-8"
-        [ngClass]="{ 'p-6': $isMobile | async }"
-      >
-        <router-outlet></router-outlet>
+      <main class="flex flex-auto p-6">
+        <div class="w-full">
+          <router-outlet></router-outlet>
+        </div>
       </main>
-      <footer class="flex flex-row justify-center">footer</footer>
+      <footer class="flex text-gray-500 flex-row justify-center">footer</footer>
     </mat-sidenav-content>
   </mat-sidenav-container>
 </div>

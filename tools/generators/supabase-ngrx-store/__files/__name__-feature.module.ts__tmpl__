@@ -1,0 +1,11 @@
+
+import { NgModule } from '@angular/core';
+import * as from <%= utils.classify(name) %> from './ <%= utils.camelize(name) %>.reducer';
+
+@NgModule({
+  imports: [
+    StoreModule.forFeature(from <%= utils.classify(name) %>. <%= utils.camelize(name) %>FeatureKey, from <%= utils.classify(name) %>.reducer),
+    EffectsModule.forFeature([ <%= utils.classify(name) %>Effects]),
+  ]
+})
+export class <%= utils.classify(name) %>FeatureModule {}
